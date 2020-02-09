@@ -28,13 +28,6 @@ def main():
 
 
 def process(spark, school_file, valeur_fonciere_file, output):
-    """
-    Contient les traitements qui permettent de lire,transformer et sauvegarder mon resultat.
-    :param spark: la session spark
-    :param school_file:  le chemin du dataset des videos
-    :param valeur_fonciere_file: le chemin du dataset des categories
-    :param output: l'emplacement souhaité du resultat
-    """
     #Chargement des datasets
     schools = spark.read.option('header', 'true').option('inferSchema', 'true').option('delimiter', ';').csv(school_file)
     vf = spark.read.option('header', 'true').option('inferSchema', 'true').csv(valeur_fonciere_file)
