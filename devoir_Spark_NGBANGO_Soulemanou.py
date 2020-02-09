@@ -6,14 +6,6 @@ import pyspark.sql.functions as f
 from pyspark.sql import Window
 
 def main():
-    """
-    Cette methode est le point d'entrée de mon job.
-    Elle va essentiellement faire 3 choses:
-        - recuperer les arguments passés via la ligne de commande
-        - creer une session spark
-        - lancer le traitement
-    Le traitement ne doit pas se faire dans la main pour des soucis de testabilité.
-    """
     parser = argparse.ArgumentParser(
         description='Discover driving sessions into log files.')
     parser.add_argument('-s', "--school_file", help='School input file', required=True)
